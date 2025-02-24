@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 1 - MicroServiços</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Integração completa</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Musicas Populares</a></li>
+          <li><a href="#">Tabela</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h2>Adicionar Novo Artista</h2>
+        <form id="formularioArtista">
+          <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
+            <span class="erro" id="erroNome"></span>
+          </div>
+          <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required />
+            <span class="erro" id="erroEmail"></span>
+          </div>
+          <div>
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required />
+            <span class="erro" id="erroIdade"></span>
+          </div>
+          <button type="submit">Adicionar Artista</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Músicas Populares</h2>
+        <p id="instrucao">(clique duas vezes para remover)</p>
+        <ul id="musicas-populares">
+          <li ondblclick="removerItem(this)">
+            Thinkin Bout You <span class="remover"></span>
+          </li>
+          <li ondblclick="removerItem(this)">
+            Nights <span class="remover"></span>
+          </li>
+          <li ondblclick="removerItem(this)">
+            Pyramids <span class="remover"></span>
+          </li>
+          <li ondblclick="removerItem(this)">
+            Pink + White <span class="remover"></span>
+          </li>
+        </ul>
+        <input type="text" id="novaMusica" placeholder="Nova música" />
+        <button id="botaoAdicionar">Adicionar Música</button>
+      </section>
+    </main>
+
+    <h2>Consumo dados via API (fetch)</h2>
+    <div class="botoes-api">
+      <button onclick="consumirApi()">Chamar API</button>
+      <button onclick="filtrarDados()">Filtrar (idade > 31)</button>
+      <button onclick="resetarFiltro()">Resetar Filtro</button>
+    </div>
+    <div id="mensagemApi"></div>
+
+    <h2>Dados da API em Tabela</h2>
+    <table id="tabelaDados" border="1">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>E-mail</th>
+          <th>Idade</th>
+          <th>Ações</th>
+          <th>Mensagem</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <footer>
+      <p>2025 Frank Ocean Fan Page.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
